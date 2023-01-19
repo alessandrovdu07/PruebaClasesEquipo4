@@ -47,7 +47,7 @@ namespace PruebaClases.MetodosAlgoritmos
 
             for (int x = 0; x < listaDem.Count; x++)
             {
-                varianceSum += Math.Pow(Convert.ToDouble(listaDem[x]) - media, 2);
+                varianceSum += Math.Pow(Convert.ToDouble(listaDem[x].CantidadProgramada) - media, 2);
             }
 
             double variance = varianceSum / (listaDem.Count() - 1);
@@ -94,7 +94,7 @@ namespace PruebaClases.MetodosAlgoritmos
             // Paso 0: Declarar y "settear" la variable media
             double media = 0;
 
-            lista1 = new List<double>();
+            
             // Paso 2: Generar números aleatorios y llenar lista de demandas
 
             LlenarDatosAleatorios(numeroDatos, limiteInferior, limiteSuperior);

@@ -21,7 +21,7 @@ namespace PruebaClases
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void button1_Click_1(object sender, EventArgs e)
         {
             try
             {
@@ -48,7 +48,7 @@ namespace PruebaClases
                     media = algoritmo.AlgoritmoGenerarAleatoriosMedia(numeroDatos, limiteInferior, limiteSuperior, lista);
                     llenarGrid(numeroDatos, algoritmo);
                     textBox4.Text = lista[0].ToString();
-                    //   stdDev = algoritmo.AlgoritmoGenerarAleatoriosStdDev(numeroDatos, limiteInferior, limiteSuperior);
+                    //stdDev = algoritmo.AlgoritmoGenerarAleatoriosStdDev(numeroDatos, limiteInferior, limiteSuperior);
                     textBox5.Text = lista[1].ToString();
                     //textBox5.Text=stdDev.ToString(); 
                 }
@@ -110,24 +110,6 @@ namespace PruebaClases
             exportarExcel.Visible = true;
         }
 
-        private void button1_Click_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label4_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox2_TextChanged(object sender, EventArgs e)
-        {
-
-        }
+       
     }
 }
