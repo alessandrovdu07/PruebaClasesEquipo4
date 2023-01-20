@@ -1,4 +1,4 @@
-﻿using PruebaClases.MetodosAlgoritmos;
+﻿using PruebaClasesEquipo4.MetodosAlgoritmos;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -48,6 +48,7 @@ namespace PruebaClasesEquipo4
                     AlgoritmoInicio algoritmo = new AlgoritmoInicio();
                     media = algoritmo.AlgoritmoGenerarAleatoriosMedia(numeroDatos, limiteInferior, limiteSuperior, lista);
                     llenarGrid(numeroDatos, algoritmo);
+                    algoritmo.AlgoritmoCiclarMedia(ciclos, numeroDatos, lista, limiteInferior, limiteSuperior);
                     textBox4.Text = lista[0].ToString();
                     //stdDev = algoritmo.AlgoritmoGenerarAleatoriosStdDev(numeroDatos, limiteInferior, limiteSuperior);
                     textBox5.Text = lista[1].ToString();

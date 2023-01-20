@@ -8,7 +8,7 @@ using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PruebaClases.MetodosAlgoritmos
+namespace PruebaClasesEquipo4.MetodosAlgoritmos
 {
     public class AlgoritmoInicio
     {
@@ -125,11 +125,11 @@ namespace PruebaClases.MetodosAlgoritmos
         }
         ///////Fin del main //////////////
 
-        public double AlgoritmoCiclarMedia (int ciclos, int numeroDatos, List<int>lista1, int limiteInferior, int limiteSuperior) 
+        public double AlgoritmoCiclarMedia (int ciclos, int numeroDatos, List<double>lista1, int limiteInferior, int limiteSuperior) 
         {
 
 
-            lista1 = new List<int>();
+            //lista1 = new List<double>();
             double MediadeLasMedias = 0;
             for (int y = 0; y < ciclos; y++) 
             {
@@ -145,6 +145,7 @@ namespace PruebaClases.MetodosAlgoritmos
             return MediadeLasMedias;
         
         }
+
 
     }
 
