@@ -1,7 +1,9 @@
-﻿using PruebaClases.Clases;
+﻿using PruebaClasesEquipo4.Clases;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Http.Headers;
+using System.Runtime.CompilerServices;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
@@ -15,6 +17,8 @@ namespace PruebaClases.MetodosAlgoritmos
         {
         }
         // Objetivo: Método realizará el promedio de una lista de demandas
+
+
         public double CalcularMedia(List<Demanda> listaDem)
         {
             // Paso 1: Declarar variables y setearlas
@@ -60,8 +64,7 @@ namespace PruebaClases.MetodosAlgoritmos
 
 
         // Llena datos de manera aleatorio Uniforme
-        public void LlenarDatosAleatorios(int numeroDatos,
-             int limiteInferior, int limiteSuperior)
+        public void LlenarDatosAleatorios(int numeroDatos,int limiteInferior, int limiteSuperior)
         {
             // Paso 1: Declarar la variable aleatorio (Entrada un tiempo)
             Random aleatorio = new Random(Environment.TickCount);
@@ -77,7 +80,7 @@ namespace PruebaClases.MetodosAlgoritmos
                 Demanda demanda = new Demanda();
                 // Paso 2.3: Settear el atributo "idDemanda" con la variable "i" (castear)
                 demanda.IdDemanda = i.ToString();
-                // Paso 2.4: Asignar el "value2" a cantidad requerida 
+                // Paso 2.4: Asignar el "value2" y "value3" a cantidad requerida y cantidad programada.
                 demanda.CantidadRequerida = value2;
                 demanda.CantidadProgramada = value3;
                 // Paso 2.5: Agregar el objeto demanda a la listaDemanda 
@@ -104,6 +107,7 @@ namespace PruebaClases.MetodosAlgoritmos
             double desest = CalcularStdDev(listaDemandas, media);
             lista1.Add(media);
             lista1.Add(desest);
+            
             return media;
         }
 
@@ -111,13 +115,35 @@ namespace PruebaClases.MetodosAlgoritmos
         {
             double media = 0;
             double stdDev;
-            //Paso 5: Calcular la stdDev            //Duda con la media.
+            //Paso 5: Calcular la stdDev            
             stdDev = CalcularStdDev(listaDemandas, media);
 
             //Paso 6: Retorna la stdDev.
 
             return stdDev;
 
+        }
+        ///////Fin del main //////////////
+
+        public double AlgoritmoCiclarMedia (int ciclos, int numeroDatos, List<int>lista1, int limiteInferior, int limiteSuperior) 
+        {
+
+
+            lista1 = new List<int>();
+            double MediadeLasMedias = 0;
+            for (int y = 0; y < ciclos; y++) 
+            {
+
+                AlgoritmoGenerarAleatoriosMedia(numeroDatos, limiteInferior, limiteSuperior, lista1);
+                MediadeLasMedias = MediadeLasMedias + CalcularMedia(listaDemandas);
+
+            }
+
+            MediadeLasMedias = MediadeLasMedias / ciclos;
+            lista1.Add(MediadeLasMedias);
+
+            return MediadeLasMedias;
+        
         }
 
     }

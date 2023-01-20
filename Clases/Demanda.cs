@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PruebaClases.Clases
+namespace PruebaClasesEquipo4.Clases
 {
     public class Demanda
     {

@@ -12,7 +12,7 @@ using Microsoft.Office.Interop.Excel;
 using objExcel = Microsoft.Office.Interop.Excel;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
-namespace PruebaClases
+namespace PruebaClasesEquipo4
 {
     public partial class Form1 : Form
     {
@@ -34,6 +34,7 @@ namespace PruebaClases
                 int numeroDatos = Convert.ToInt32(textBox1.Text);
                 int limiteInferior = Convert.ToInt32(textBox2.Text);
                 int limiteSuperior = Convert.ToInt32(textBox3.Text);
+                int  ciclos = Convert.ToInt32(textBox6.Text);
                 double stdDev = 0, media = 0;
                 List<double> lista = new List<double>();
                 // Paso 2: Condicíon de Mayor y Menor
@@ -51,6 +52,7 @@ namespace PruebaClases
                     //stdDev = algoritmo.AlgoritmoGenerarAleatoriosStdDev(numeroDatos, limiteInferior, limiteSuperior);
                     textBox5.Text = lista[1].ToString();
                     //textBox5.Text=stdDev.ToString(); 
+                    textBox7.Text = lista[2].ToString();
                 }
                 else
                 {
@@ -109,7 +111,5 @@ namespace PruebaClases
             }
             exportarExcel.Visible = true;
         }
-
-       
     }
 }
